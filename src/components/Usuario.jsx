@@ -1,6 +1,6 @@
 const Usuario = () => {
   return (
-    <div className= "m-3 bg-white shadow-md px-5 py-5 rounded-xl">
+    <div className= "mx-5 my-10 bg-white shadow-md px-5 py-5 rounded-xl">
     <p className= "font-bold mb-3 text-gray-700" >
       Nombre: {""}
         <span className= "font-normal" >Hook</span>
