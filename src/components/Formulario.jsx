@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Formulario = () => {
+const Formulario = ({ usuarios, setUsuarios }) => {
 
   // useState
   const [usuario, setUsuario] = useState(''); 
@@ -19,17 +19,20 @@ const Formulario = () => {
       toast.error('Todos los campos son obligatorios')
 
     }else{
-      toast.info('Formulario enviado'), {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        }
+      toast.info('Formulario enviado')
   
     }
+    // objeto de usuarios
+
+    const objetoUsuarios = {
+      usuario, 
+      email, 
+      fecha, 
+      observacion 
+    }
+
+    setUsuarios ( [...usuarios, objetoUsuarios] )
+
 
   }
 
