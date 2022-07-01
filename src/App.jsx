@@ -15,8 +15,11 @@ function App() {
           <Formulario 
             usuarios = {usuarios}
             setUsuarios = {setUsuarios}
-          />        
-          <ListadoClientes />  
+          /> 
+
+          <ListadoClientes 
+            usuarios = {usuarios}
+          />  
       </div>  
             
     </div>

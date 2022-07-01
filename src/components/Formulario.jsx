@@ -33,6 +33,11 @@ const Formulario = ({ usuarios, setUsuarios }) => {
 
     setUsuarios ( [...usuarios, objetoUsuarios] )
 
+    // reiniciar formulario 
+    setUsuario ("")
+    setEmail ("")
+    setFecha ("")
+    setObservacion ("")
 
   }
 

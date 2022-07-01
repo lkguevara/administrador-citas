@@ -1,21 +1,22 @@
-const Usuario = () => {
+const Usuario = ({usuario}) => {
+  console.log(usuario)
   return (
     <div className= "mx-5 my-10 bg-white shadow-md px-5 py-5 rounded-xl">
     <p className= "font-bold mb-3 text-gray-700" >
       Nombre: {""}
-        <span className= "font-normal" >Hook</span>
+        <span className= "font-normal" >{usuario.usuario}</span>
     </p>
     <p className= "font-bold mb-3 text-gray-700" >
       Email: {""}
-        <span className= "font-normal" >email@email.com</span>
+        <span className= "font-normal" >{usuario.email}</span>
     </p>
     <p className= "font-bold mb-3 text-gray-700" >
       Fecha: {""}
-        <span className= "font-normal" ></span>
+        <span className= "font-normal" >{usuario.fecha}</span>
     </p>
     <p className= "font-bold mb-3 text-gray-700" >
       Observaciones: {""}
-        <span className= "font-normal" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolores voluptatum perspiciatis ex eius, laboriosam fuga dicta id corrupti pariatur culpa eum magni quos quod sunt obcaecati delectus ab tempora?</span>
+        <span className= "font-normal" >{usuario.observacion}</span>
     </p>
   </div>
   )
