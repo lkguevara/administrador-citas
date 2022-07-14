@@ -5,7 +5,7 @@ const ListadoClientes = ({usuarios}) => {
   console.log(usuarios)
   return (
     <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
-      <h2 className= "font-black text-3xl text-center mt-10">
+      <h2 className= "font-black text-3xl text-center mt-10 md:mt-0">
         Lista de clientes
       </h2>
 
@@ -18,18 +18,7 @@ const ListadoClientes = ({usuarios}) => {
           <Usuario 
             usuario = {usuario} 
           />
-      ))}
-        
-        
-      
-      
-      
-     
-      
-     
-
- 
-      
+      ))} 
     </div>
   )
 }
