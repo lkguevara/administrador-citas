@@ -1,5 +1,6 @@
 const Usuario = ({usuario}) => {
-  // console.log(usuario)
+  
+
   return (
     <div className= "mx-5 my-10 bg-white shadow-md px-5 py-5 rounded-xl">
     <p className= "font-bold mb-3 text-gray-700" >
