@@ -26,7 +26,7 @@ const ListadoClientes = ({usuarios}) => {
         </>
       )
       
-       : 
+      : 
        <>
         <h2 className= "font-black text-3xl text-center mt-10 md:mt-0">
           No hay usuarios

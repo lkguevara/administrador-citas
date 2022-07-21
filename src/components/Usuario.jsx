@@ -19,6 +19,18 @@ const Usuario = ({usuario}) => {
       Observaciones: {""}
         <span className= "font-normal" >{usuario.observacion}</span>
     </p>
+
+    <div className="flex justify-between mt-10">
+      <button 
+        type="button"
+        className = "bg-cyan-800 py-2 px-8 mx-3 text-white font-bold rounded-lg hover:bg-cyan-700 cursor-pointer transition-all"
+      >Editar</button>
+
+      <button 
+        type="button"
+        className = "bg-cyan-800 py-2 px-8 mx-3 text-white font-bold rounded-lg hover:bg-cyan-700 cursor-pointer transition-all"
+      >Eliminar</button>
+    </div>
   </div>
   )
 
