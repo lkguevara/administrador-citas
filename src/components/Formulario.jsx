@@ -10,6 +10,15 @@ const Formulario = ({ usuarios, setUsuarios }) => {
   const [fecha, setFecha] = useState(''); 
   const [observacion, setObservacion] = useState('');
 
+  const [error, setError] = useState(false);
+
+  const generarId = () => {
+    const randomId = Math.random().toString(36).substring(2);
+    const fechaId = Date.now().toString(36);
+
+    return randomId + fechaId;
+  }
+
 // 4.  funcion para agregar un nuevo usuario
   const handleSubmit = (e) => {
     //evita que se recargue la página
@@ -17,17 +26,19 @@ const Formulario = ({ usuarios, setUsuarios }) => {
     
     // validación de los campos
     if ( [ usuario, email, fecha, observacion ].includes('') ) {
-      toast.error('Todos los campos son obligatorios')
-    }else{
-      toast.info('Formulario enviado')
+      console.log('hay al menos un campo vacío')
+      setError(true);
+      return;
     }
+    setError(false);
     
     // objeto de usuario
     const objetoUsuarios = {
       usuario, 
       email, 
       fecha, 
-      observacion 
+      observacion,
+      id: generarId()
     }
 
     // agregar el nuevo usuario al array, pero tomando una copia de lo que ya existe en el array
@@ -52,6 +63,7 @@ const Formulario = ({ usuarios, setUsuarios }) => {
         onSubmit = { handleSubmit } 
         className= "bg-white shadow-md rounded-md py-10 px-5"
       >
+        {error && <p className= "text-red-600 text-center font-medium text-lg pb-4">Todos los campos son obligatorios</p>}
         <div className="mb-5">
           <label htmlFor='usuario' className="block text-gray-700 font-bold">Nombre</label>
           <input 
