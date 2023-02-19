@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Importando los componentes
 import Header from "./components/Header"
@@ -6,15 +6,31 @@ import Formulario from "./components/Formulario"
 import ListadoClientes from "./components/ListadoClientes"
 
 function App() {
-  // función que se encarga de modificar el arreglo de usuarios
-  const [usuarios, setUsuarios] = useState([]);
-  // estado para el usuario seleccionado
-  const [user, setUser] = useState({});
+  const [usuarios, setUsuarios] = useState([]);// modificar el arreglo de usuarios
+  const [user, setUser] = useState({});// estado para el usuario seleccionado
 
+  // Aplicar localStorage
+  useEffect(() => {
+    const obtenerLS = () => {
+      const usuariosLS = JSON.parse(localStorage.getItem("usuarios") ?? []); 
+      setUsuarios(usuariosLS);
+    }
+    obtenerLS()
+    
+  }, []);// cuando se pasa un arreglo vacío, se ejecuta una sola vez
+
+  // Sincroniza el state con lo que haya en usuarios
+  useEffect(() => {
+    localStorage.setItem("usuarios", JSON.stringify(usuarios)); // convierte el arreglo de usuarios en un string
+  }, [usuarios]);
+
+
+  // Función para eliminar un usuario
   const deleteUser = (id) => {
     const usuariosFiltrados = usuarios.filter( usuario => usuario.id !== id);
     setUsuarios(usuariosFiltrados);
   }
+  
   
   return (
     <div className="container mx-auto mt-20">
