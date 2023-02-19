@@ -9,7 +9,7 @@ function App() {
   const [usuarios, setUsuarios] = useState([]);// modificar el arreglo de usuarios
   const [user, setUser] = useState({});// estado para el usuario seleccionado
 
-  // Aplicar localStorage
+ /* // Aplicar localStorage
   useEffect(() => {
     const obtenerLS = () => {
       const usuariosLS = JSON.parse(localStorage.getItem("usuarios") ?? []); 
@@ -22,7 +22,7 @@ function App() {
   // Sincroniza el state con lo que haya en usuarios
   useEffect(() => {
     localStorage.setItem("usuarios", JSON.stringify(usuarios)); // convierte el arreglo de usuarios en un string
-  }, [usuarios]);
+  }, [usuarios]); */
 
 
   // Función para eliminar un usuario
