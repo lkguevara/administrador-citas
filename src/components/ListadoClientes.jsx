@@ -1,11 +1,11 @@
 import Usuario from "./Usuario"
 
   
-const ListadoClientes = ({usuarios}) => {
+const ListadoClientes = ({usuarios, setUser, deleteUser}) => {
   // console.log(usuarios && usuarios.length); indica la cantidad de usuarios que hay en el array
 
   return (
-    <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
+    <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">     {/* me indica que el arreglo está en 0 */}
       {usuarios && usuarios.length ? (
         <>
           <h2 className= "font-black text-3xl text-center mt-10 md:mt-0">
@@ -17,10 +17,12 @@ const ListadoClientes = ({usuarios}) => {
           </p>
 
         
-          { usuarios.map ( (usuario) => (
+          { usuarios.map ( usuario => (
               <Usuario 
                 key = {usuario.id}
-                usuario = {usuario} 
+                usuario  = {usuario} 
+                setUser = {setUser} 
+                deleteUser = {deleteUser}
               />
           ))}
         </>

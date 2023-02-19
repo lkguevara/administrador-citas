@@ -1,5 +1,13 @@
-const Usuario = ({usuario}) => {
-  
+const Usuario = ({usuario, setUser, deleteUser}) => {
+
+  const handleDelete = () => {
+    const confirm = window.confirm("¿Estás seguro de eliminar este usuario?");
+    if(confirm) {
+      deleteUser(usuario.id);
+    }
+
+    
+  }
 
   return (
     <div className= "mx-5 my-10 bg-white shadow-md px-5 py-5 rounded-xl">
@@ -24,11 +32,14 @@ const Usuario = ({usuario}) => {
       <button 
         type="button"
         className = "bg-cyan-800 py-2 px-8 mx-3 text-white font-bold rounded-lg hover:bg-cyan-700 cursor-pointer transition-all"
+        onClick = {() => setUser(usuario)}
       >Editar</button>
 
       <button 
         type="button"
         className = "bg-cyan-800 py-2 px-8 mx-3 text-white font-bold rounded-lg hover:bg-cyan-700 cursor-pointer transition-all"
+        onClick = {handleDelete}
+        
       >Eliminar</button>
     </div>
   </div>
